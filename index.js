@@ -92,6 +92,7 @@ const init = async() => {
 }
 
 init()
+// teste comment
 
 app.listen(3000, (err) => {
     if(err) {
