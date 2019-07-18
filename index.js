@@ -88,7 +88,7 @@ app.post('/admin/vagas/editar/:id', async(req, res) => {
     res.redirect('/admin/vagas');
 })
 
-const dbConnection = sqlite.open(path.resolve(__dirname, 'banco.sqlite', { Promise }))
+const dbConnection = sqlite.open(path.resolve(__dirname, 'banco.sqlite'), { Promise })
 
 const init = async() => {
     const db = await dbConnection
