@@ -3,6 +3,7 @@ const app = express()
 const sqlite = require('sqlite')
 const bodyParser = require('body-parser')
 
+const path = require('path')
 const port = process.env.PORT || 3000
 
 app.set('view engine', 'ejs')
@@ -79,7 +80,7 @@ app.post('/admin/vagas/editar/:id', async(req, res) => {
     res.redirect('/admin/vagas');
 })
 
-const dbConnection = sqlite.open('banco.sqlite', { Promise })
+const dbConnection = sqlite.open(path.resolve(__dirname, 'banco.sqlite', { Promise })
 
 const init = async() => {
     const db = await dbConnection
