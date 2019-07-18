@@ -1,0 +1,22 @@
+<% include ../header %>
+    <h2>NOVA VAGA</h2>
+    <a href="/admin/vagas">Voltar</a>    
+        <div>
+            <form method="POST">
+                <label>Titulo</label>
+                <input name="titulo" type="text">
+                <br>
+                <label>Descrição</label>
+                <textarea name="descricao"></textarea>
+                <br>
+                <label>Categoria</label>
+                <select name="categoria">
+                    <% categorias.forEach(categoria => { %> 
+                    <option value="<%= categoria.ID %>"><%= categoria.CATEGORIA %></option>
+                    <% }) %>
+                </select>
+                <br>
+                <button>Salvar</button>
+            </form>
+        </div>
+<% include ../footer %>
